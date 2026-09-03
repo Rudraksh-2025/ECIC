@@ -20,9 +20,7 @@ import RoiIcon from '@mui/icons-material/QueryStats';
 import ArticleIcon from '@mui/icons-material/Article';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import { useStore } from '../store';
-import {
-  DemoScenarioPanel, Grid, KpiCard, PageHeader, SectionCard, StatusChip, Stack,
-} from '../components';
+import { Grid, KpiCard, PageHeader, SectionCard, StatusChip, Stack } from '../components';
 import { campaignPerformance, countBy, monthlySeries, pipelineMetrics, slaForComplaint, sumBy } from '../utils/analytics';
 import { num, pct, zar } from '../utils/format';
 import { fmtDateTime } from '../utils/dates';
@@ -194,19 +192,6 @@ export function Dashboard() {
             <Button variant="contained" onClick={() => navigate('/reports')}>Open report centre</Button>
           </>
         }
-      />
-
-      <DemoScenarioPanel
-        scenario="An ECIC executive opens the CRM at the start of the day and needs a single view of client engagement, case health and marketing return before the management meeting."
-        evidence={[
-          'Twelve live KPIs across leads, pipeline, cases, SLA and campaign ROI',
-          'Nine charts computed from the same dataset used by every other screen',
-          'Date range, business unit, owner, source, campaign, stage and category filters that recalculate every figure',
-          'Sub-second render time evidencing the performance requirement',
-        ]}
-        requirements={[73, 96, 99, 23, 40, 41]}
-        next="Log a complaint to demonstrate multi-channel capture"
-        nextTo="/complaints/new"
       />
 
       {/* Filters */}

@@ -21,9 +21,7 @@ import { useNavigate } from 'react-router-dom';
 import { useStore, useCurrentUser, useMasking } from '../store';
 import { ROLES, ROLE_LIST } from '../data/roles';
 import { writeAudit } from '../services/mockApi';
-import {
-  DemoScenarioPanel, Grid, KpiCard, LabelValue, PageHeader, SectionCard, SimulatedBadge, Stack,
-} from '../components';
+import { Grid, KpiCard, LabelValue, PageHeader, SectionCard, SimulatedBadge, Stack } from '../components';
 import { toast, useRenderTiming } from '../hooks';
 import { maskEmail, maskPhone, num } from '../utils/format';
 import { CONTINUITY } from '../data/implementation';
@@ -184,22 +182,6 @@ export function SecurityCenter() {
         assurance evidence — represent the intended production operating model. We do not claim that a browser
         demonstration delivers production-grade security.
       </Alert>
-
-      <DemoScenarioPanel
-        scenario="The Phase Four security demonstration: switch role to show restricted permissions, switch again to show approval rights, show masked personal information, run MFA, open the audit log and show the SoD matrix."
-        evidence={[
-          'Nine roles with an explicit permission matrix and documented segregation rationale',
-          'Live role switching changing navigation, actions and field visibility',
-          'Working MFA flow for internal and portal sign-in',
-          'Personal information masking with a controlled unmask permission, every use audited',
-          'Read-only audit log with before/after values and chained hashes',
-          'File security scanning with a demonstrable blocked upload',
-          'SSO, encryption, backup, DR and assurance evidence, each labelled as simulated',
-        ]}
-        requirements={[77, 78, 79, 80, 82, 83, 84, 85, 86, 87, 88, 99]}
-        next="Open the audit log to show what this session recorded"
-        nextTo="/audit"
-      />
 
       <Grid cols={{ xs: 2, sm: 3, md: 6 }} gap={1.75} sx={{ mb: 2.5 }}>
         <KpiCard dense label="Roles defined" value={num(ROLE_LIST.length)} colour="#0B2545" onClick={() => navigate('/users')} />

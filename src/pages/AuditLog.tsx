@@ -5,9 +5,7 @@ import LockIcon from '@mui/icons-material/Lock';
 import DownloadIcon from '@mui/icons-material/Download';
 import FingerprintIcon from '@mui/icons-material/Fingerprint';
 import { useStore } from '../store';
-import {
-  DataTable, DemoScenarioPanel, FilterBar, Grid, KpiCard, PageHeader, SectionCard, Stack,
-} from '../components';
+import { DataTable, FilterBar, Grid, KpiCard, PageHeader, SectionCard, Stack } from '../components';
 import type { Column } from '../components';
 import { fmtDateTime, relativeTime } from '../utils/dates';
 import { downloadCsv, num } from '../utils/format';
@@ -115,19 +113,6 @@ export function AuditLog() {
             Export Excel
           </Button>
         }
-      />
-
-      <DemoScenarioPanel
-        scenario="An evaluator asks: “show me everything that happened to the complaint we created at the start of this demonstration.” The audit log answers in seconds, and there is no way to edit or delete an entry."
-        evidence={[
-          'Every create, update, assignment, escalation, communication, resolution and closure is recorded',
-          'Actor, role, timestamp, entity, entity ID, before value, after value, IP address and device on every event',
-          'A chained integrity hash linking each record to the one before it',
-          'No edit or delete action exists anywhere in this interface',
-          'Filter by entity, user, action and period; export with the filter context',
-        ]}
-        requirements={[12, 22, 85, 87]}
-        next="Filter to a specific complaint reference"
       />
 
       <Alert severity="info" icon={<FingerprintIcon />} sx={{ mb: 2.5 }}>

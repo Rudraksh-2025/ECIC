@@ -10,9 +10,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '../store';
 import { api } from '../services/mockApi';
-import {
-  DemoScenarioPanel, Grid, PageHeader, SectionCard, Stack, StatusChip,
-} from '../components';
+import { Grid, PageHeader, SectionCard, Stack, StatusChip } from '../components';
 import { toast } from '../hooks';
 import { fmtDate } from '../utils/dates';
 import type { ComplaintChannel, Severity } from '../types';
@@ -179,18 +177,6 @@ export function ComplaintNew() {
           { label: 'New complaint' },
         ]}
         actions={<Button variant="outlined" onClick={() => navigate('/complaints')}>Cancel</Button>}
-      />
-
-      <DemoScenarioPanel
-        scenario="A complaint is received by telephone from an ECIC exporter. The specialist captures it directly into the CRM while still on the call."
-        evidence={[
-          'Seven capture channels including telephone, walk-in and internal referral',
-          'Date and time received are captured separately from the capture time',
-          'Mandatory field validation blocks progression and renders inline errors',
-          'The SLA target is derived live from the configured severity rule',
-          'Reference generation, routing, acknowledgement and audit all fire on save',
-        ]}
-        requirements={[1, 2, 3, 4, 5]}
       />
 
       <Grid cols={{ xs: 1, lg: 3 }} gap={2.5}>

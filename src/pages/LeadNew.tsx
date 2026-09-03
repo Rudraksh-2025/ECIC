@@ -10,7 +10,7 @@ import MergeIcon from '@mui/icons-material/CallMerge';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '../store';
 import { api } from '../services/mockApi';
-import { DemoScenarioPanel, Grid, PageHeader, SectionCard, Stack, StatusChip } from '../components';
+import { Grid, PageHeader, SectionCard, Stack, StatusChip } from '../components';
 import { toast, useDebounced } from '../hooks';
 import { fmtDate } from '../utils/dates';
 import { LEAD_ENQUIRY_TYPES, LEAD_PRODUCTS } from '../data/leads';
@@ -110,18 +110,6 @@ export function LeadNew() {
           { label: 'New lead' },
         ]}
         actions={<Button variant="outlined" onClick={() => navigate('/leads')}>Cancel</Button>}
-      />
-
-      <DemoScenarioPanel
-        scenario="A Business Development Officer captures an enquiry received by telephone. As they type the email address, the CRM checks the configured matching rules and surfaces possible duplicates before the record is created."
-        evidence={[
-          'Duplicate detection runs live against email, telephone and company name',
-          'The matched rule and its confidence weight are shown to the user',
-          'Review, open, merge or continue-anyway options on every match',
-          'A backup owner is mandatory whenever a primary owner is assigned',
-        ]}
-        requirements={[24, 27, 30]}
-        next="Try entering grace.mabaso@highveldsteel.demo.africa"
       />
 
       <Grid cols={{ xs: 1, lg: 3 }} gap={2.5}>

@@ -11,9 +11,7 @@ import AssessmentIcon from '@mui/icons-material/Assessment';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '../store';
 import { api } from '../services/mockApi';
-import {
-  DemoScenarioPanel, Grid, KpiCard, PageHeader, SectionCard, Stack,
-} from '../components';
+import { Grid, KpiCard, PageHeader, SectionCard, Stack } from '../components';
 import { toast } from '../hooks';
 import { fmtDateTime } from '../utils/dates';
 import { num } from '../utils/format';
@@ -46,20 +44,6 @@ export function Reports() {
         subtitle="Standard ECIC reports across eight categories, plus a no-code report builder for business users to define, save and export their own reports."
         breadcrumbs={[{ label: 'ECIC CRM', to: '/dashboard' }, { label: 'Reports' }]}
         actions={<Button variant="contained" startIcon={<TuneIcon />} onClick={openBuilder}>Customise report</Button>}
-      />
-
-      <DemoScenarioPanel
-        scenario="A manager needs SLA performance for the quarter, then wants a report ECIC does not ship as standard — so they build it themselves, save it and export it."
-        evidence={[
-          'Eight report categories covering leads, complaints, opportunities, campaigns, SLA, customers, activities and audit',
-          'Every report has KPI cards, charts, filters, grouping, sorting, search and a generation timestamp',
-          'Customise Report lets a business user pick fields, grouping, filters and sort with no development',
-          'Saved report configurations persist and reopen',
-          'Excel-compatible export and a print-ready view, both carrying the filter context and timestamp',
-        ]}
-        requirements={[23, 40, 42, 43, 75, 76]}
-        next="Open the Complaint SLA Performance report"
-        nextTo="/reports/RPT-C1"
       />
 
       <Grid cols={{ xs: 2, sm: 3, md: 6 }} gap={1.75} sx={{ mb: 2.5 }}>

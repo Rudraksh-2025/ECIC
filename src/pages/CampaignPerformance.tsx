@@ -9,9 +9,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '../store';
-import {
-  DataTable, DemoScenarioPanel, Grid, KpiCard, PageHeader, SectionCard, Stack, StatusChip,
-} from '../components';
+import { DataTable, Grid, KpiCard, PageHeader, SectionCard, Stack, StatusChip } from '../components';
 import type { Column } from '../components';
 import { AXIS_STYLE, TOOLTIP_STYLE, formatTip } from '../components/charts';
 import { campaignPerformance, eventPerformance } from '../utils/analytics';
@@ -160,20 +158,6 @@ export function CampaignPerformance() {
             Export Excel
           </Button>
         }
-      />
-
-      <DemoScenarioPanel
-        scenario="The marketing executive must decide where next year's exhibition budget goes. The CRM shows which campaigns and events returned, which are declining, and what the recommendation is for each."
-        evidence={[
-          'Spend, leads, qualified leads, opportunities, revenue, ROI and conversion per campaign and event',
-          'Portfolio ROI and cost-per-lead benchmarks',
-          'High and low performing exhibitions called out explicitly',
-          'Recurring series with declining ROI identified automatically',
-          'Prioritise / Monitor / Consider reducing investment recommendations',
-        ]}
-        requirements={[41, 60, 61, 68]}
-        next="Open the reporting centre for the full report set"
-        nextTo="/reports"
       />
 
       <Grid cols={{ xs: 2, sm: 3, md: 6 }} gap={1.75} sx={{ mb: 2.5 }}>

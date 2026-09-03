@@ -18,10 +18,7 @@ import { Link as RouterLink, useNavigate, useParams } from 'react-router-dom';
 import { useStore, useMasking } from '../store';
 import { ROLES } from '../data/roles';
 import { api } from '../services/mockApi';
-import {
-  ActivityTimeline, DemoScenarioPanel, EmptyState, Grid, LabelValue, PageHeader,
-  SectionCard, SlaBar, Stack, StatusChip,
-} from '../components';
+import { ActivityTimeline, EmptyState, Grid, LabelValue, PageHeader, SectionCard, SlaBar, Stack, StatusChip } from '../components';
 import { leadSla, toast } from '../hooks';
 import { fmtDate, fmtDateTime, isoDate } from '../utils/dates';
 import { maskEmail, maskPhone, zar } from '../utils/format';
@@ -198,20 +195,6 @@ export function LeadDetail() {
           <AlertTitle>Disqualified</AlertTitle>{lead.disqualifiedReason}
         </Alert>
       )}
-
-      <DemoScenarioPanel
-        scenario="A qualified enquiry is worked from assignment through structured desktop analysis to conversion into a sales opportunity, without re-keying a single field."
-        evidence={[
-          'Mandatory owner and backup owner recorded on the lead',
-          'First-contact SLA measured in business days against the configured rule',
-          'Configurable desktop analysis with qualification, risk and commercial criteria',
-          'Conversion wizard copying account, contacts, history, documents, campaign attribution and the analysis outcome',
-          'Permanent originating-lead relationship on the resulting opportunity',
-        ]}
-        requirements={[25, 26, 27, 28, 31, 32, 51]}
-        next={converted ? 'Open the resulting opportunity' : 'Complete desktop analysis and convert'}
-        nextTo={converted && opportunity ? `/opportunities/${opportunity.id}` : undefined}
-      />
 
       <Grid cols={{ xs: 1, lg: 3 }} gap={2.5}>
         <Box sx={{ gridColumn: { lg: 'span 2' }, minWidth: 0 }}>

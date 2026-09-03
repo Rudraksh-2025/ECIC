@@ -15,10 +15,7 @@ import { Link as RouterLink, useNavigate, useParams } from 'react-router-dom';
 import { useStore } from '../store';
 import { ROLES } from '../data/roles';
 import { api } from '../services/mockApi';
-import {
-  ActivityTimeline, DemoScenarioPanel, EmptyState, Grid, LabelValue, PageHeader,
-  SectionCard, SimulatedBadge, Stack, StatusChip,
-} from '../components';
+import { ActivityTimeline, EmptyState, Grid, LabelValue, PageHeader, SectionCard, SimulatedBadge, Stack, StatusChip } from '../components';
 import { toast } from '../hooks';
 import { fmtDate, fmtDateTime } from '../utils/dates';
 import { APPLICATION_FORMS } from '../data/applications';
@@ -160,19 +157,6 @@ export function ApplicationDetail() {
           Policy documentation generation has been triggered and the client notified.
         </Alert>
       )}
-
-      <DemoScenarioPanel
-        scenario="An ECIC cover application is completed digitally, signed electronically, submitted for underwriting review and decided — with every step visible to the customer in the portal."
-        evidence={[
-          'Sectioned, mobile-friendly form rendered from configurable field definitions',
-          'Mandatory field validation blocking submission',
-          'Simulated digital signature capturing signer, consent, timestamp, IP and device',
-          'Record locking on signature and a workflow status stepper',
-          'Segregation of duties between the submitting officer and the deciding underwriter',
-        ]}
-        requirements={[29, 44, 45, 46, 47, 52, 86]}
-        next="Show the documents automatically linked to this application"
-      />
 
       <Box sx={{ mb: 2.5 }}>
         <SectionCard>

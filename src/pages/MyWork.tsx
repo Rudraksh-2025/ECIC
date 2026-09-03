@@ -10,9 +10,7 @@ import CommsIcon from '@mui/icons-material/Email';
 import { useNavigate } from 'react-router-dom';
 import { useStore, useCurrentUser } from '../store';
 import { api } from '../services/mockApi';
-import {
-  DemoScenarioPanel, EmptyState, Grid, KpiCard, PageHeader, SectionCard, SlaBar, Stack, StatusChip,
-} from '../components';
+import { EmptyState, Grid, KpiCard, PageHeader, SectionCard, SlaBar, Stack, StatusChip } from '../components';
 import { useComplaintSla, leadSla, toast } from '../hooks';
 import { fmtDate, relativeTime } from '../utils/dates';
 import { num } from '../utils/format';
@@ -134,19 +132,6 @@ export function MyWork() {
           </Stack>
         }
         actions={<Button variant="contained" onClick={() => navigate('/tasks')}>Open SLA workspace</Button>}
-      />
-
-      <DemoScenarioPanel
-        scenario="A Complaints Specialist starts their day. My Work shows exactly what needs attention: cases at SLA risk, pending information requests, escalations and approvals — with a direct link to each record."
-        evidence={[
-          'Pending actions aggregated per user across every module',
-          'SLA-at-risk cases surfaced first with live consumption',
-          'Complete, reassign and snooze actions on every task, each audited',
-          'Approvals, follow-ups, escalations and customer communications separated',
-        ]}
-        requirements={[7, 6, 10, 26]}
-        next="Open a case at SLA risk"
-        nextTo={atRisk[0] ? `/complaints/${atRisk[0].complaint.id}` : '/complaints'}
       />
 
       {atRisk.length > 0 && (

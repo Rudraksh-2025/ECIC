@@ -24,9 +24,6 @@ import UsersIcon from '@mui/icons-material/AdminPanelSettings';
 import SecurityIcon from '@mui/icons-material/Shield';
 import ConfigIcon from '@mui/icons-material/Tune';
 import IntegrationIcon from '@mui/icons-material/Hub';
-import ImplementationIcon from '@mui/icons-material/Engineering';
-import DemoIcon from '@mui/icons-material/SlideshowRounded';
-import MatrixIcon from '@mui/icons-material/ChecklistRtl';
 import type { SvgIconComponent } from '@mui/icons-material';
 
 export interface NavItem {
@@ -104,14 +101,6 @@ export const NAV_GROUPS: NavGroup[] = [
       { key: 'users', label: 'Users & Roles', to: '/users', icon: UsersIcon },
       { key: 'configuration', label: 'Configuration', to: '/configuration', icon: ConfigIcon },
       { key: 'integrations', label: 'Integrations', to: '/integrations', icon: IntegrationIcon },
-    ],
-  },
-  {
-    label: 'Bid Presentation',
-    items: [
-      { key: 'implementation', label: 'Implementation & Support', to: '/implementation', icon: ImplementationIcon },
-      { key: 'bid-demo', label: 'Bid Demo Mode', to: '/bid-demo', icon: DemoIcon },
-      { key: 'coverage', label: 'Requirement Coverage', to: '/coverage', icon: MatrixIcon },
     ],
   },
 ];

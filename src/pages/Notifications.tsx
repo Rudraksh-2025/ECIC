@@ -8,9 +8,7 @@ import DoneAllIcon from '@mui/icons-material/DoneAll';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '../store';
 import { api } from '../services/mockApi';
-import {
-  DemoScenarioPanel, EmptyState, FilterBar, Grid, KpiCard, PageHeader, SectionCard, Stack,
-} from '../components';
+import { EmptyState, FilterBar, Grid, KpiCard, PageHeader, SectionCard, Stack } from '../components';
 import { toast } from '../hooks';
 import { fmtDateTime, relativeTime } from '../utils/dates';
 import { num } from '../utils/format';
@@ -65,20 +63,6 @@ export function Notifications() {
             </Button>
           </>
         }
-      />
-
-      <DemoScenarioPanel
-        scenario="Customers and staff are notified at every stage of the complaint, lead and application lifecycles. The content of each message comes from a template a business administrator can edit."
-        evidence={[
-          'Twelve configurable templates covering the full complaint, lead and application lifecycles',
-          'In-app, email and SMS channels represented per notification',
-          'Rendered message content visible on every notification',
-          'SLA warning and breach alerts raised automatically from the configured thresholds',
-          'Unread counts that update as notifications are read',
-        ]}
-        requirements={[5, 6, 15, 52, 91]}
-        next="Edit a template and trigger the notification again"
-        nextTo="/configuration?tab=templates"
       />
 
       <Grid cols={{ xs: 2, sm: 3, md: 6 }} gap={1.75} sx={{ mb: 2.5 }}>

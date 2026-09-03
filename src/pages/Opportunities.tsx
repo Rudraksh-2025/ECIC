@@ -12,10 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import { useStore } from '../store';
 import { ROLES } from '../data/roles';
 import { api } from '../services/mockApi';
-import {
-  ConfirmDialog, DataTable, DemoScenarioPanel, FilterBar, Grid, KpiCard, PageHeader,
-  SectionCard, Stack, StatusChip,
-} from '../components';
+import { ConfirmDialog, DataTable, FilterBar, Grid, KpiCard, PageHeader, SectionCard, Stack, StatusChip } from '../components';
 import type { Column } from '../components';
 import { toast } from '../hooks';
 import { averageStageDurations, pipelineMetrics } from '../utils/analytics';
@@ -183,20 +180,6 @@ export function Opportunities() {
             <Button variant="contained" onClick={() => navigate('/analytics')}>Revenue forecast</Button>
           </>
         }
-      />
-
-      <DemoScenarioPanel
-        scenario="A Sales User works the pipeline: advancing a deal between stages, reviewing how long each opportunity has been stalled, and recording a mandatory reason when a deal is lost."
-        evidence={[
-          'Drag-and-drop Kanban across the five configured sales stages',
-          'Weighted forecast recalculated on every stage change',
-          'Time in stage against the portfolio average, highlighting stalled deals',
-          'Closed Lost requires a reason from the configured list plus supporting detail',
-          'Closed opportunities become read-only for standard users',
-          'Single-product and multi-product opportunities with line-level values',
-        ]}
-        requirements={[33, 34, 36, 37, 38, 40]}
-        next="Open an opportunity to see stage timing and activities"
       />
 
       <Grid cols={{ xs: 2, sm: 3, md: 6 }} gap={1.75} sx={{ mb: 2.5 }}>

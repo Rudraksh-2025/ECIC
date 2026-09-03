@@ -3,7 +3,7 @@ import {
   AppBar, Avatar, Badge, Box, Button, Chip, Dialog, DialogContent, Divider, Drawer,
   IconButton, List, ListItemButton, ListItemIcon, ListItemText, ListSubheader,
   Menu, MenuItem, Popover, Snackbar, Alert, Toolbar, Tooltip, Typography, useMediaQuery, useTheme,
-  BottomNavigation, BottomNavigationAction, LinearProgress, Switch, FormControlLabel,
+  BottomNavigation, BottomNavigationAction, LinearProgress,
 } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -12,8 +12,6 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import CloseIcon from '@mui/icons-material/Close';
 import SwitchAccountIcon from '@mui/icons-material/SwitchAccount';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import SlideshowIcon from '@mui/icons-material/Slideshow';
 import LogoutIcon from '@mui/icons-material/Logout';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
@@ -56,9 +54,9 @@ function Logo({ compact }: { compact?: boolean }) {
           <Typography sx={{ color: '#fff', fontWeight: 700, fontSize: '0.9rem', lineHeight: 1.15 }}>
             ECIC CRM Platform
           </Typography>
-          <Typography sx={{ color: alpha('#fff', 0.55), fontSize: '0.65rem', letterSpacing: '.06em', fontWeight: 600 }}>
+          {/* <Typography sx={{ color: alpha('#fff', 0.55), fontSize: '0.65rem', letterSpacing: '.06em', fontWeight: 600 }}>
             BID DEMONSTRATION BUILD
-          </Typography>
+          </Typography> */}
         </Box>
       )}
     </Stack>
@@ -168,16 +166,9 @@ function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
       </Box>
       <Divider sx={{ borderColor: alpha('#fff', 0.08) }} />
       <Box sx={{ p: 1.5, flexShrink: 0 }}>
-        <Button
-          fullWidth variant="contained" color="secondary" size="small"
-          component={RouterLink} to="/bid-demo" onClick={onNavigate}
-          startIcon={<SlideshowIcon />}
-        >
-          Open Bid Demo Mode
-        </Button>
-        <Typography sx={{ color: alpha('#fff', 0.4), fontSize: '0.65rem', mt: 1.25, textAlign: 'center' }}>
+        {/* <Typography sx={{ color: alpha('#fff', 0.4), fontSize: '0.65rem', textAlign: 'center' }}>
           Frontend demonstration build · dummy data
-        </Typography>
+        </Typography> */}
       </Box>
     </Box>
   );
@@ -285,7 +276,6 @@ export function AppShell() {
   const navigate = useNavigate();
 
   const unread = notifications.filter((n) => !n.read && (!n.recipientId || n.recipientId === session.userId)).length;
-  const canUnmask = ROLES[session.role].permissions.includes('pii.unmask');
 
   useToastListener(React.useCallback((t: Toast) => {
     setToasts((prev) => [...prev, t]);
@@ -371,33 +361,6 @@ export function AppShell() {
                 sx={{ bgcolor: alpha(BRAND.GOLD, 0.15), color: '#8A6D0B', fontWeight: 700, display: { xs: 'none', sm: 'flex' } }}
               />
             )}
-
-            <Tooltip title={
-              canUnmask
-                ? (session.showSensitiveData
-                  ? 'Personal information is currently visible. Every unmasking action is written to the audit log.'
-                  : 'Personal information is masked. Your role may unmask it.')
-                : 'Your role does not carry the "Show sensitive data" permission, so personal information stays masked.'
-            }>
-              <span>
-                <IconButton
-                  onClick={() => {
-                    setSession({ showSensitiveData: !session.showSensitiveData });
-                    writeAudit(
-                      session.showSensitiveData ? 'Sensitive data re-masked' : 'Sensitive data unmasked',
-                      'Session', user.id,
-                      `PII ${session.showSensitiveData ? 'revealed' : 'masked'}`,
-                      `PII ${session.showSensitiveData ? 'masked' : 'revealed'}; justification: demonstration`,
-                    );
-                  }}
-                  disabled={!canUnmask}
-                  aria-label="Toggle sensitive data visibility"
-                  color={session.showSensitiveData ? 'secondary' : 'default'}
-                >
-                  {session.showSensitiveData ? <VisibilityIcon /> : <VisibilityOffIcon />}
-                </IconButton>
-              </span>
-            </Tooltip>
 
             <IconButton onClick={(e) => setNotifAnchor(e.currentTarget)} aria-label={`${unread} unread notifications`}>
               <Badge badgeContent={unread} color="error" max={99}>
@@ -500,17 +463,6 @@ export function AppShell() {
             Switch demonstration role
           </MenuItem>
         )}
-        <Box sx={{ px: 2, py: 0.5 }}>
-          <FormControlLabel
-            control={
-              <Switch
-                size="small" checked={presentation}
-                onChange={(e) => setSession({ presentationMode: e.target.checked })}
-              />
-            }
-            label={<Typography variant="body2">Presentation mode</Typography>}
-          />
-        </Box>
         <MenuItem onClick={() => { setProfileAnchor(null); navigate('/security'); }}>
           <ListItemIcon><VisibilityIcon fontSize="small" /></ListItemIcon>
           Security Centre

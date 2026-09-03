@@ -3,9 +3,7 @@ import { Alert, Box, Button, Chip, Divider, MenuItem, TextField, Typography } fr
 import { alpha } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '../store';
-import {
-  DemoScenarioPanel, Grid, KpiCard, PageHeader, SectionCard, Stack,
-} from '../components';
+import { Grid, KpiCard, PageHeader, SectionCard, Stack } from '../components';
 import { ChatEngine } from './chat/ChatEngine';
 import { fmtDateTime } from '../utils/dates';
 import { num } from '../utils/format';
@@ -28,19 +26,6 @@ export function Chat() {
         subtitle="Automated first-line response from the FAQ knowledge base, with urgent routing to a human agent and case creation directly from the conversation."
         breadcrumbs={[{ label: 'ECIC CRM', to: '/dashboard' }, { label: 'Chatbot / Live Chat' }]}
         actions={<Button variant="contained" onClick={() => navigate('/portal/chat')}>Open in customer portal</Button>}
-      />
-
-      <DemoScenarioPanel
-        scenario="A customer asks the chatbot a routine question and gets an immediate answer from the knowledge base. They then raise something urgent, the conversation is routed to a live agent, and a case is created from the transcript."
-        evidence={[
-          'Intent-matching chatbot answering the common ECIC questions from the FAQ library',
-          'Suggested and related follow-up questions after each answer',
-          'Urgent or unsupported questions offer Escalate to Agent',
-          'Bot → Triage → Human Agent routing indicator with full transcript handover',
-          'Case creation from the conversation, with the transcript retained on the case',
-        ]}
-        requirements={[92, 93, 95]}
-        next="Ask an urgent question, then escalate"
       />
 
       <Grid cols={{ xs: 2, sm: 4 }} gap={1.75} sx={{ mb: 2.5 }}>

@@ -17,10 +17,7 @@ import { Link as RouterLink, useNavigate, useParams } from 'react-router-dom';
 import { useStore, useMasking } from '../store';
 import { ROLES } from '../data/roles';
 import { api, renderTemplate } from '../services/mockApi';
-import {
-  ActivityTimeline, ConfirmDialog, DemoScenarioPanel, EmptyState, Grid, LabelValue,
-  PageHeader, SectionCard, SlaBar, Stack, StatusChip,
-} from '../components';
+import { ActivityTimeline, ConfirmDialog, EmptyState, Grid, LabelValue, PageHeader, SectionCard, SlaBar, Stack, StatusChip } from '../components';
 import { useComplaintSla, toast } from '../hooks';
 import { fmtDate, fmtDateTime } from '../utils/dates';
 import { maskEmail, maskPhone } from '../utils/format';
@@ -197,21 +194,6 @@ export function ComplaintDetail() {
           The SLA clock is <strong>paused</strong> while this case is Pending Information from the customer.
         </Alert>
       )}
-
-      <DemoScenarioPanel
-        scenario="A complaint is investigated, the outcome is communicated to the customer, feedback is captured and the case is closed — but only by a role authorised to do so."
-        evidence={[
-          'Live SLA target, elapsed, remaining and percentage consumed',
-          'Investigation findings, outcome, resolution and corrective action recorded on the case',
-          'Communication issued on the customer’s preferred channel from a configurable template',
-          'Negative feedback automatically escalates the case and creates a supervisor task',
-          'Closure pre-condition checklist and role-restricted authorisation',
-          'Full timeline and audit trail of every action',
-        ]}
-        requirements={[6, 11, 13, 14, 16, 19, 20, 21, 22]}
-        next="Show the audit trail for this case"
-        nextTo="/audit"
-      />
 
       <Grid cols={{ xs: 1, lg: 3 }} gap={2.5}>
         <Box sx={{ gridColumn: { lg: 'span 2' }, minWidth: 0 }}>

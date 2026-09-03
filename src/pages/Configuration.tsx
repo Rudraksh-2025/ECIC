@@ -14,9 +14,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useStore } from '../store';
 import { ROLES, ROLE_LIST } from '../data/roles';
 import { api } from '../services/mockApi';
-import {
-  ConfirmDialog, DemoScenarioPanel, Grid, KpiCard, PageHeader, SectionCard, Stack,
-} from '../components';
+import { ConfirmDialog, Grid, KpiCard, PageHeader, SectionCard, Stack } from '../components';
 import { toast } from '../hooks';
 import { num } from '../utils/format';
 import type { AnalysisFieldConfig, CampaignTemplateField, NotificationTemplate, PicklistItem, RoleId } from '../types';
@@ -157,21 +155,6 @@ export function Configuration() {
           <strong> System Administrator</strong> in the header to demonstrate no-code configuration.
         </Alert>
       )}
-
-      <DemoScenarioPanel
-        scenario="The evaluator asks whether ECIC will need a developer every time a business rule changes. Change the complaint SLA from five days to three, save, then reopen a complaint — the target, due date and risk status have all changed."
-        evidence={[
-          'Complaint statuses, categories, lead sources and opportunity stages editable as lists',
-          'SLA targets and warning thresholds that immediately change every SLA calculation',
-          'Communication templates with merge fields, edited and previewed in the interface',
-          'Campaign template fields — add a mandatory field and it is enforced on the next campaign',
-          'Mandatory field rules, approval steps and desktop analysis fields',
-          'Security settings including permitted file types, enforced live at upload',
-        ]}
-        requirements={[8, 15, 17, 62, 63, 81]}
-        next="Change the standard complaint SLA, then open a complaint"
-        nextTo="/complaints"
-      />
 
       <Grid cols={{ xs: 2, sm: 3, md: 6 }} gap={1.75} sx={{ mb: 2.5 }}>
         <KpiCard dense label="Configurable lists" value="5" sub="Statuses, categories, sources, stages" colour="#0B2545" onClick={() => setTabAndParam(0)} />

@@ -4,9 +4,7 @@ import { alpha } from '@mui/material/styles';
 import DownloadIcon from '@mui/icons-material/Download';
 import { useNavigate } from 'react-router-dom';
 import { useStore, useMasking } from '../store';
-import {
-  DataTable, DemoScenarioPanel, FilterBar, Grid, KpiCard, PageHeader, Stack, StatusChip,
-} from '../components';
+import { DataTable, FilterBar, Grid, KpiCard, PageHeader, Stack, StatusChip } from '../components';
 import type { Column } from '../components';
 import { downloadCsv, maskEmail, maskPhone, num, zar } from '../utils/format';
 import { COUNTRIES, SECTORS } from '../data/customers';
@@ -118,19 +116,6 @@ export function Customers() {
             Export Excel
           </Button>
         }
-      />
-
-      <DemoScenarioPanel
-        scenario="An account manager opens a customer to see every interaction ECIC has had with that organisation, across complaints, leads, opportunities, applications and documents."
-        evidence={[
-          'Customer master record with all RFP-specified fields',
-          'Related record counts visible directly on the list',
-          'Customer 360 view with a clickable relationship graph',
-          'Personal information masking driven by the active role',
-          'Consent capture and retention indicators for POPIA',
-        ]}
-        requirements={[51, 87]}
-        next="Open a customer to see the 360 relationship view"
       />
 
       <Grid cols={{ xs: 2, sm: 3, md: 6 }} gap={1.75} sx={{ mb: 2.5 }}>

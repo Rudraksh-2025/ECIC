@@ -14,10 +14,7 @@ import { Link as RouterLink, useNavigate, useParams } from 'react-router-dom';
 import { useStore } from '../store';
 import { ROLES } from '../data/roles';
 import { api } from '../services/mockApi';
-import {
-  ActivityTimeline, ConfirmDialog, DemoScenarioPanel, EmptyState, Grid, LabelValue,
-  PageHeader, SectionCard, Stack, StatusChip,
-} from '../components';
+import { ActivityTimeline, ConfirmDialog, EmptyState, Grid, LabelValue, PageHeader, SectionCard, Stack, StatusChip } from '../components';
 import { toast } from '../hooks';
 import { averageStageDurations } from '../utils/analytics';
 import { fmtDate, fmtDateTime } from '../utils/dates';
@@ -134,20 +131,6 @@ export function OpportunityDetail() {
           {' '}Standard users cannot amend a closed opportunity.
         </Alert>
       )}
-
-      <DemoScenarioPanel
-        scenario="A qualified lead has become an opportunity. The sales user progresses it through the pipeline, logs client activity, hands it over to underwriting, and the Business Development Unit retains visibility of the whole lifecycle after handover."
-        evidence={[
-          'Permanent originating-lead relationship and campaign attribution',
-          'Single and multi-product opportunity lines rolling up to the deal value',
-          'Time in each stage measured against the portfolio average',
-          'Handover to STI or Medium/Long-Term underwriting with BDU retaining visibility',
-          'Full activity log, document traceability and record timeline',
-        ]}
-        requirements={[31, 32, 33, 34, 35, 36, 51]}
-        next={applications.length ? 'Open the linked digital application' : 'Create a digital application for this opportunity'}
-        nextTo={applications.length ? `/applications/${applications[0].id}` : '/applications/new'}
-      />
 
       <Grid cols={{ xs: 1, lg: 3 }} gap={2.5}>
         <Box sx={{ gridColumn: { lg: 'span 2' }, minWidth: 0 }}>

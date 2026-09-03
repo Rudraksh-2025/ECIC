@@ -3,9 +3,7 @@ import { alpha } from '@mui/material/styles';
 import QrIcon from '@mui/icons-material/QrCodeScanner';
 import { Link as RouterLink, useNavigate, useParams } from 'react-router-dom';
 import { useStore } from '../store';
-import {
-  DemoScenarioPanel, EmptyState, Grid, KpiCard, LabelValue, PageHeader, SectionCard, Stack, StatusChip,
-} from '../components';
+import { EmptyState, Grid, KpiCard, LabelValue, PageHeader, SectionCard, Stack, StatusChip } from '../components';
 import { eventPerformance } from '../utils/analytics';
 import { fmtDate } from '../utils/dates';
 import { num, pct, zar } from '../utils/format';
@@ -60,20 +58,6 @@ export function EventDetail() {
             </Button>
           )
         }
-      />
-
-      <DemoScenarioPanel
-        scenario="An event has run. Marketing reviews how many leads it produced, how many qualified, what revenue followed, and whether the recurring series is still worth the investment."
-        evidence={[
-          'Leads captured per event and against the target',
-          'Conversion rate, opportunities created and attributed revenue',
-          'ROI against actual spend, and a Prioritise / Monitor / Reduce recommendation',
-          'Recurring-series trend identifying declining performance',
-          'Organiser vendor classification and performance history',
-        ]}
-        requirements={[60, 61, 65, 68]}
-        next="Compare against the full event portfolio"
-        nextTo="/campaign-performance"
       />
 
       {perf.declining && (

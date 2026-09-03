@@ -5,9 +5,7 @@ import QrIcon from '@mui/icons-material/QrCodeScanner';
 import DownloadIcon from '@mui/icons-material/Download';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '../store';
-import {
-  DataTable, DemoScenarioPanel, FilterBar, Grid, KpiCard, PageHeader, SectionCard, Stack, StatusChip,
-} from '../components';
+import { DataTable, FilterBar, Grid, KpiCard, PageHeader, SectionCard, Stack, StatusChip } from '../components';
 import type { Column } from '../components';
 import { eventPerformance } from '../utils/analytics';
 import { fmtDate } from '../utils/dates';
@@ -140,20 +138,6 @@ export function Events() {
             </Button>
           </>
         }
-      />
-
-      <DemoScenarioPanel
-        scenario="ECIC exhibits at a trade expo. The event is set up with a campaign, budget, target audience, expected leads and an organiser profile; QR lead capture is enabled for the stand team."
-        evidence={[
-          'Full event record: venue, dates, duration, audience, products, campaign, budget, targets and organiser',
-          'Planned / Active / Completed lifecycle',
-          'Centralised organiser profiles with vendor classification and performance history',
-          'Per-event lead, conversion and revenue metrics',
-          'QR capture toggle per event feeding the mobile capture experience',
-        ]}
-        requirements={[54, 60, 64, 65]}
-        next="Capture a lead by QR at the live event"
-        nextTo="/qr-capture"
       />
 
       <Grid cols={{ xs: 2, sm: 3, md: 6 }} gap={1.75} sx={{ mb: 2.5 }}>

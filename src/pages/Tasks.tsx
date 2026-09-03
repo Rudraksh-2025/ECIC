@@ -5,9 +5,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '../store';
 import { api } from '../services/mockApi';
-import {
-  DataTable, DemoScenarioPanel, FilterBar, Grid, KpiCard, PageHeader, SectionCard, SlaBar, Stack, StatusChip,
-} from '../components';
+import { DataTable, FilterBar, Grid, KpiCard, PageHeader, SectionCard, SlaBar, Stack, StatusChip } from '../components';
 import type { Column } from '../components';
 import { useComplaintSla, leadSla, toast } from '../hooks';
 import { fmtDate, relativeTime } from '../utils/dates';
@@ -141,20 +139,6 @@ export function Tasks() {
             <Button variant="contained" onClick={() => navigate('/my-work')}>My work</Button>
           </>
         }
-      />
-
-      <DemoScenarioPanel
-        scenario="A Complaints Supervisor reviews SLA health across the team: which cases are breached, which are approaching their target, and what pending actions are outstanding."
-        evidence={[
-          'Automated SLA alerts driven by the configured warning threshold',
-          'At-risk and breached queues across complaints and leads',
-          'Pending-information reminders with the age of the outstanding request',
-          'Complete, reassign and snooze actions, each writing an audit event',
-          'SLA compliance rate computed from resolved and closed cases',
-        ]}
-        requirements={[6, 7, 10, 26]}
-        next="Open a breached case and record its resolution"
-        nextTo={breached[0] ? `/complaints/${breached[0].complaint.id}` : '/complaints'}
       />
 
       {breached.length > 0 && (

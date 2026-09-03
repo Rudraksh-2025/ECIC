@@ -8,7 +8,7 @@ import {
 import DownloadIcon from '@mui/icons-material/Download';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '../store';
-import { DemoScenarioPanel, Grid, KpiCard, PageHeader, SectionCard, Stack } from '../components';
+import { Grid, KpiCard, PageHeader, SectionCard, Stack } from '../components';
 import { AXIS_STYLE, CHART_COLOURS, TOOLTIP_STYLE, formatTip } from '../components/charts';
 import { averageStageDurations, pipelineMetrics, sumBy } from '../utils/analytics';
 import { monthBuckets } from '../utils/dates';
@@ -100,20 +100,6 @@ export function Analytics() {
             <Button variant="contained" onClick={() => navigate('/reports/RPT-O2')}>Open forecast report</Button>
           </>
         }
-      />
-
-      <DemoScenarioPanel
-        scenario="The executive team needs the revenue forecast for the next two quarters and an explanation of why deals are being lost."
-        evidence={[
-          'Best case, commit, weighted forecast, open pipeline and won revenue',
-          'Monthly forecast chart filterable by owner, stage, campaign and period',
-          'Pipeline by stage, owner and sector with average time in stage',
-          'Win ratio, loss ratio, conversion ratio, average deal value and pipeline velocity',
-          'Loss reasons ranked by value lost',
-        ]}
-        requirements={[39, 40, 42, 43, 73]}
-        next="Open the pipeline-by-stage report"
-        nextTo="/reports/RPT-O1"
       />
 
       <Box className="no-print" sx={{

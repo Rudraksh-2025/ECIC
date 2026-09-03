@@ -9,10 +9,7 @@ import QrIcon from '@mui/icons-material/QrCodeScanner';
 import SyncProblemIcon from '@mui/icons-material/SyncProblem';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useStore, useMasking } from '../store';
-import {
-  DataTable, DemoScenarioPanel, FilterBar, Grid, KpiCard, PageHeader, SectionCard,
-  SlaBar, Stack, StatusChip,
-} from '../components';
+import { DataTable, FilterBar, Grid, KpiCard, PageHeader, SectionCard, SlaBar, Stack, StatusChip } from '../components';
 import type { Column } from '../components';
 import { leadSla } from '../hooks';
 import { fmtDate, relativeTime } from '../utils/dates';
@@ -167,21 +164,6 @@ export function Leads() {
             <Button variant="contained" startIcon={<AddIcon />} onClick={() => navigate('/leads/new')}>New lead</Button>
           </>
         }
-      />
-
-      <DemoScenarioPanel
-        scenario="An enquiry arrives from a South African exporter. It is captured with duplicate detection, assigned to a Business Development Officer with a named backup, qualified through structured desktop analysis, and converted into an opportunity."
-        evidence={[
-          'Seven intake channels including web form, email, API, social media, QR and the customer portal',
-          'Live duplicate detection against configurable matching rules at the point of capture',
-          'Mandatory primary owner and visible backup owner before the lead can progress',
-          'First-contact SLA with live countdown and at-risk alerting',
-          'Structured, configurable desktop analysis producing a decision and risk rating',
-          'Conversion wizard retaining a permanent originating-lead relationship',
-        ]}
-        requirements={[24, 25, 26, 27, 28, 30, 31]}
-        next="Capture a new lead and trigger duplicate detection"
-        nextTo="/leads/new"
       />
 
       <Grid cols={{ xs: 2, sm: 3, md: 6 }} gap={1.75} sx={{ mb: 2.5 }}>

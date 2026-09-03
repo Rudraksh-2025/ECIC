@@ -12,9 +12,7 @@ import StarIcon from '@mui/icons-material/Star';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useStore } from '../store';
-import {
-  DemoScenarioPanel, EmptyState, Grid, KpiCard, PageHeader, SectionCard, Stack,
-} from '../components';
+import { EmptyState, Grid, KpiCard, PageHeader, SectionCard, Stack } from '../components';
 import { toast } from '../hooks';
 import { num } from '../utils/format';
 
@@ -227,20 +225,6 @@ export function Faqs({ portal }: { portal?: boolean }) {
         subtitle="A searchable knowledge base of thirty-two ECIC questions across nine categories, backing both the customer portal and the chatbot."
         breadcrumbs={[{ label: 'ECIC CRM', to: '/dashboard' }, { label: 'FAQ Library' }]}
         actions={<Button variant="contained" onClick={() => navigate('/chat')}>Open chat</Button>}
-      />
-
-      <DemoScenarioPanel
-        scenario="A customer looks for an answer themselves before contacting ECIC. The same library answers the chatbot, so self-service and assisted service never diverge."
-        evidence={[
-          'Full-text search across question and answer content',
-          'Category filtering and popular-question surfacing',
-          'Expand/collapse articles with helpful / not helpful voting',
-          'Related questions on every article',
-          'Escalation to a live agent from any article',
-        ]}
-        requirements={[95, 92]}
-        next="Ask the chatbot the same question"
-        nextTo="/chat"
       />
 
       <Grid cols={{ xs: 2, sm: 4 }} gap={1.75} sx={{ mb: 2.5 }}>

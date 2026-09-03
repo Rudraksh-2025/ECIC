@@ -10,9 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import { useStore } from '../store';
 import { ROLES } from '../data/roles';
 import { api } from '../services/mockApi';
-import {
-  DataTable, DemoScenarioPanel, FilterBar, Grid, KpiCard, PageHeader, SectionCard, Stack, StatusChip,
-} from '../components';
+import { DataTable, FilterBar, Grid, KpiCard, PageHeader, SectionCard, Stack, StatusChip } from '../components';
 import type { Column } from '../components';
 import { toast } from '../hooks';
 import { fmtDate, isoDate } from '../utils/dates';
@@ -157,20 +155,6 @@ export function Campaigns() {
             </Button>
           </>
         }
-      />
-
-      <DemoScenarioPanel
-        scenario="A Marketing User creates a new exhibition campaign from a pre-configured template. The template pre-populates budget, audience and expected ROI, and enforces the mandatory fields on save."
-        evidence={[
-          'Three pre-configured campaign templates: exhibition, digital and product launch',
-          'Template pre-populates budget, target, expected ROI, audience and product',
-          'Mandatory campaign data validated with inline errors before save',
-          'Approval routing to the Marketing Communications Specialist',
-          'Templates are maintained in the Configuration Centre without development',
-        ]}
-        requirements={[62, 63, 66, 67]}
-        next="Open campaign performance to see ROI analysis"
-        nextTo="/campaign-performance"
       />
 
       <Grid cols={{ xs: 2, sm: 3, md: 6 }} gap={1.75} sx={{ mb: 2.5 }}>

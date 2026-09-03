@@ -13,10 +13,7 @@ import CampaignIcon from '@mui/icons-material/Campaign';
 import ActivityIcon from '@mui/icons-material/EventNote';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useStore, useMasking } from '../store';
-import {
-  ActivityTimeline, DemoScenarioPanel, EmptyState, Grid, LabelValue, PageHeader,
-  SectionCard, Stack, StatusChip,
-} from '../components';
+import { ActivityTimeline, EmptyState, Grid, LabelValue, PageHeader, SectionCard, Stack, StatusChip } from '../components';
 import { fmtDate, fmtDateTime } from '../utils/dates';
 import { maskEmail, maskPhone, zar } from '../utils/format';
 
@@ -122,19 +119,6 @@ export function CustomerDetail() {
             <Button variant="contained" onClick={() => navigate('/complaints/new')}>Log complaint</Button>
           </>
         }
-      />
-
-      <DemoScenarioPanel
-        scenario="The presenter is asked: “show me everything ECIC knows about this customer.” The 360 view answers that in a single screen, with every related record one click away."
-        evidence={[
-          'Customer → Contacts → Leads → Opportunities → Applications → Documents → Cases relationship map',
-          'Every node clickable, opening the underlying record',
-          'Campaign attribution and activity history in the same view',
-          'Consent status, retention date and personal-information masking',
-        ]}
-        requirements={[51, 87, 50]}
-        next="Open the traceability chain on an opportunity"
-        nextTo={opportunities[0] ? `/opportunities/${opportunities[0].id}` : '/opportunities'}
       />
 
       <Grid cols={{ xs: 2, sm: 4, md: 8 }} gap={1.5} sx={{ mb: 2.5 }}>

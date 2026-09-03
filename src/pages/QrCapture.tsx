@@ -14,9 +14,7 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useStore } from '../store';
 import { api } from '../services/mockApi';
-import {
-  DemoScenarioPanel, Grid, KpiCard, LabelValue, PageHeader, SectionCard, Stack, StatusChip,
-} from '../components';
+import { Grid, KpiCard, LabelValue, PageHeader, SectionCard, Stack, StatusChip } from '../components';
 import { toast } from '../hooks';
 import { fmtDateTime } from '../utils/dates';
 import { num, pct } from '../utils/format';
@@ -110,21 +108,6 @@ export function QrCapture() {
             label={<Typography variant="body2">Offline mode</Typography>}
           />
         }
-      />
-
-      <DemoScenarioPanel
-        scenario="ECIC is exhibiting at a trade expo. A stand team member scans a delegate's badge on a phone, corrects one field, submits, and the lead appears in the CRM assigned to a Business Development Officer. The same flow works with no connectivity."
-        evidence={[
-          'Event selection before capture, applying the event and campaign attribution automatically',
-          'Simulated camera and QR scan returning the delegate payload',
-          'Manual correction of every captured field before submission',
-          'Immediate synchronisation to the CRM with owner assignment and a success confirmation',
-          'Offline capture held on the device with a Stored Offline badge and a Sync Now action',
-          'Per-event capture, conversion and follow-up metrics',
-        ]}
-        requirements={[53, 54, 55, 56, 57, 58, 59, 60, 97]}
-        next="Open the lead that was just created"
-        nextTo={result?.leadId ? `/leads/${result.leadId}` : '/leads'}
       />
 
       <Grid cols={{ xs: 1, lg: 3 }} gap={2.5}>

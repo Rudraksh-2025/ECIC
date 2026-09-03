@@ -10,9 +10,7 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import SupportIcon from '@mui/icons-material/SupportAgent';
 import ShieldIcon from '@mui/icons-material/Security';
 import { useNavigate } from 'react-router-dom';
-import {
-  DemoScenarioPanel, Grid, KpiCard, LabelValue, PageHeader, SectionCard, SimulatedBadge, Stack, StatusChip,
-} from '../components';
+import { Grid, KpiCard, LabelValue, PageHeader, SectionCard, SimulatedBadge, Stack, StatusChip } from '../components';
 import { fmtDate } from '../utils/dates';
 import { downloadCsv, num, pct } from '../utils/format';
 import {
@@ -63,23 +61,6 @@ export function Implementation() {
         so the delivery approach can be presented within the working system. The final programme plan, named team and
         service levels are those set out in the bid response.
       </Alert>
-
-      <DemoScenarioPanel
-        scenario="Phase Four awards forty points to implementation approach. This module presents the delivery plan, training, change management, team, support model, SLAs and business continuity inside the product itself."
-        evidence={[
-          'Nine-phase delivery plan with deliverables, owners, dates, status, progress, milestones and dependencies',
-          'RAID register with impact, likelihood, mitigation, owner and status',
-          'Role-based training curriculum with delivery method, duration, audience and completion tracking',
-          'Change management plan with stakeholder impact, activities and readiness scoring',
-          'Named team structure with allocation, responsibilities and a designated backup for every role',
-          'P1–P4 support model with response and resolution targets and a five-level escalation chain',
-          'Hypercare model and transition into three years of managed support',
-          'Business continuity with RTO, RPO, backup, DR testing and resource continuity',
-        ]}
-        requirements={[98, 100, 101, 83, 84]}
-        next="Show configuration without development"
-        nextTo="/configuration"
-      />
 
       <Grid cols={{ xs: 2, sm: 3, md: 6 }} gap={1.75} sx={{ mb: 2.5 }}>
         <KpiCard dense label="Delivery phases" value={num(PROJECT_PHASES.length)} sub="Mobilisation to managed support" colour="#0B2545" />

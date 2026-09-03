@@ -11,9 +11,7 @@ import HelpIcon from '@mui/icons-material/HelpOutlined';
 import { useStore } from '../store';
 import { ROLES } from '../data/roles';
 import { api } from '../services/mockApi';
-import {
-  DemoScenarioPanel, Grid, KpiCard, LabelValue, PageHeader, SectionCard, SimulatedBadge, Stack,
-} from '../components';
+import { Grid, KpiCard, LabelValue, PageHeader, SectionCard, SimulatedBadge, Stack } from '../components';
 import { toast } from '../hooks';
 import { fmtDateTime, relativeTime } from '../utils/dates';
 import { num } from '../utils/format';
@@ -65,21 +63,6 @@ export function Integrations() {
         than live connectivity. Leads sourced from the dtic IFW feed are present in the demonstration data so the
         downstream effect of an inbound integration is visible.
       </Alert>
-
-      <DemoScenarioPanel
-        scenario="The evaluator asks how the CRM fits into the wider ECIC estate: where leads come from, how customers are emailed, where documents live, and how Power BI gets its data."
-        evidence={[
-          'Ten integration cards with direction, protocol, endpoint, last sync, record count and error count',
-          'Corporate email (Exchange Online) inbound and outbound',
-          'dtic Integrated Financial Workflow inbound lead feed, visible in the lead data',
-          'Power BI dataset publication supporting enterprise reporting',
-          'Active Directory / Entra ID single sign-on and SCIM provisioning',
-          'Run Sync action updating the record count, last-sync time and audit log',
-        ]}
-        requirements={[74, 89, 90, 91, 77]}
-        next="Open the leads module and filter by the API Integration source"
-        nextTo="/leads?status=all"
-      />
 
       <Grid cols={{ xs: 2, sm: 3, md: 6 }} gap={1.75} sx={{ mb: 2.5 }}>
         <KpiCard dense label="Integrations" value={num(store.integrations.length)} colour="#0B2545" />

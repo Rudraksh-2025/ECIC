@@ -8,9 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { useStore } from '../store';
 import { ROLES } from '../data/roles';
 import { api } from '../services/mockApi';
-import {
-  DemoScenarioPanel, Grid, KpiCard, PageHeader, SectionCard, Stack, StatusChip,
-} from '../components';
+import { Grid, KpiCard, PageHeader, SectionCard, Stack, StatusChip } from '../components';
 import { toast } from '../hooks';
 import { fmtDate } from '../utils/dates';
 import { num, zar } from '../utils/format';
@@ -54,18 +52,6 @@ export function Pipeline() {
             <MenuItem value="Medium/Long-Term Insurance">Medium/Long-Term Insurance</MenuItem>
           </TextField>
         }
-      />
-
-      <DemoScenarioPanel
-        scenario="A qualified lead becomes an opportunity, is worked to proposal stage and is then handed over to the STI or Medium/Long-Term underwriting queue. Underwriting updates the ticket status and the BDU continues to see the whole lifecycle."
-        evidence={[
-          'Promising leads, applications and the underwriting queue on one screen',
-          'Separate STI and Medium/Long-Term underwriting queues',
-          'Underwriting users update the status; BDU retains visibility after handover',
-          'Segregation of duties between origination and the underwriting decision',
-        ]}
-        requirements={[21, 34, 44, 52, 86]}
-        next="Update an underwriting status as the Underwriting User role"
       />
 
       <Grid cols={{ xs: 2, sm: 3, md: 6 }} gap={1.75} sx={{ mb: 2.5 }}>

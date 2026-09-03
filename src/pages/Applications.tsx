@@ -7,9 +7,7 @@ import DrawIcon from '@mui/icons-material/Draw';
 import LockIcon from '@mui/icons-material/Lock';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '../store';
-import {
-  DataTable, DemoScenarioPanel, FilterBar, Grid, KpiCard, PageHeader, SectionCard, Stack, StatusChip,
-} from '../components';
+import { DataTable, FilterBar, Grid, KpiCard, PageHeader, SectionCard, Stack, StatusChip } from '../components';
 import type { Column } from '../components';
 import { fmtDate } from '../utils/dates';
 import { downloadCsv, num } from '../utils/format';
@@ -130,19 +128,6 @@ export function Applications() {
             </Button>
           </>
         }
-      />
-
-      <DemoScenarioPanel
-        scenario="An exporter completes an ECIC cover application digitally, signs it electronically and submits it. Underwriting reviews and approves it — all without a paper form."
-        evidence={[
-          'Three ECIC application forms rendered from configurable field definitions',
-          'Draft auto-save, mandatory validation and mobile-friendly layout',
-          'Simulated digital signature capturing signer, consent, timestamp and device',
-          'Document locking on signature and a workflow status stepper',
-          'Supporting documents linked automatically to the application and opportunity',
-        ]}
-        requirements={[29, 44, 45, 46, 47, 52]}
-        next="Open a draft application and sign it"
       />
 
       <Grid cols={{ xs: 2, sm: 3, md: 6 }} gap={1.75} sx={{ mb: 2.5 }}>

@@ -11,9 +11,7 @@ import PaletteIcon from '@mui/icons-material/Palette';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '../store';
 import { api } from '../services/mockApi';
-import {
-  DemoScenarioPanel, Grid, KpiCard, LabelValue, PageHeader, SectionCard, Stack, StatusChip,
-} from '../components';
+import { Grid, KpiCard, LabelValue, PageHeader, SectionCard, Stack, StatusChip } from '../components';
 import { toast } from '../hooks';
 import { fmtDate, fmtDateTime } from '../utils/dates';
 import { num } from '../utils/format';
@@ -70,19 +68,6 @@ export function Cim() {
         breadcrumbs={[{ label: 'ECIC CRM', to: '/dashboard' }, { label: 'Corporate Identity Manual' }]}
         chips={current && <Chip size="small" icon={<PaletteIcon />} label={`Current: ${current.version}`} sx={{ bgcolor: alpha('#059669', .12), color: '#059669', fontWeight: 700 }} />}
         actions={<Button variant="contained" onClick={() => setSubmitOpen(true)}>Submit marketing asset</Button>}
-      />
-
-      <DemoScenarioPanel
-        scenario="Marketing submits an exhibition banner for a campaign. The system checks it against the current approved Corporate Identity Manual, and the Marketing Communications Specialist review is mandatory before it can be approved."
-        evidence={[
-          'One current approved CIM version; every superseded version marked Obsolete and restricted from use',
-          'Draft → Marketing Review → Communications Review → Approval → Published workflow with reviewer, date and comments',
-          'Automated compliance checklist covering logo, colours, disclaimer, template, wording and reviewer',
-          'Mandatory Marketing Communications Specialist reviewer enforced before approval',
-          'Notifications and audit history on every approval step',
-        ]}
-        requirements={[69, 70, 71, 72]}
-        next="Advance the v4.3 draft through the approval workflow"
       />
 
       <Grid cols={{ xs: 2, sm: 3, md: 6 }} gap={1.75} sx={{ mb: 2.5 }}>

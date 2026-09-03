@@ -12,10 +12,7 @@ import EscalateIcon from '@mui/icons-material/PriorityHigh';
 import LockIcon from '@mui/icons-material/Lock';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useStore, useMasking } from '../store';
-import {
-  DataTable, DemoScenarioPanel, FilterBar, Grid, KpiCard, PageHeader,
-  SectionCard, SlaBar, Stack, StatusChip,
-} from '../components';
+import { DataTable, FilterBar, Grid, KpiCard, PageHeader, SectionCard, SlaBar, Stack, StatusChip } from '../components';
 import type { Column } from '../components';
 import { useComplaintSla } from '../hooks';
 import { fmtDate, relativeTime } from '../utils/dates';
@@ -162,20 +159,6 @@ export function Complaints() {
             </Button>
           </>
         }
-      />
-
-      <DemoScenarioPanel
-        scenario="A customer telephones ECIC to complain that their policy schedule reflects the wrong buyer country limit. The specialist captures the complaint, investigates it, communicates the outcome and — only with supervisor authorisation — closes it."
-        evidence={[
-          'Seven capture channels: email, telephone, walk-in, internal referral, online portal, chat and social media',
-          'Live SLA target, elapsed, remaining and consumption against the configured severity rule',
-          'Escalation flags, dissatisfaction-driven auto-escalation and supervisor visibility',
-          'Closure pre-conditions and role-restricted authorisation',
-          'Complete timeline and audit trail on every case',
-        ]}
-        requirements={[1, 2, 3, 6, 9, 16, 18, 19, 20, 22, 23]}
-        next="Log a new complaint end to end"
-        nextTo="/complaints/new"
       />
 
       <Grid cols={{ xs: 2, sm: 3, md: 6 }} gap={1.75} sx={{ mb: 2.5 }}>

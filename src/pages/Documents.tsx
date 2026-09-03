@@ -7,9 +7,7 @@ import ShieldIcon from '@mui/icons-material/GppGood';
 import BlockIcon from '@mui/icons-material/Block';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useStore } from '../store';
-import {
-  DataTable, DemoScenarioPanel, FilterBar, Grid, KpiCard, PageHeader, SectionCard, Stack, StatusChip,
-} from '../components';
+import { DataTable, FilterBar, Grid, KpiCard, PageHeader, SectionCard, Stack, StatusChip } from '../components';
 import type { Column } from '../components';
 import { fmtDate } from '../utils/dates';
 import { downloadCsv, num } from '../utils/format';
@@ -132,20 +130,6 @@ export function Documents() {
             </Button>
           </>
         }
-      />
-
-      <DemoScenarioPanel
-        scenario="A supporting document is uploaded against a transaction. The system validates the file type and size, scans it, classifies it, sets a retention date and links it to the customer and transaction automatically."
-        evidence={[
-          'File type and size rules enforced from the Configuration Centre',
-          'Scanning → Safe → Saved progression, with a demonstrable blocked file',
-          'Structured metadata: type, classification, version, status, owner, retention',
-          'Full version history per document',
-          'Automatic linking to customer, lead, opportunity, application and case',
-        ]}
-        requirements={[48, 49, 50, 80, 81]}
-        next="Open the customer 360 view to follow the traceability chain"
-        nextTo="/customers"
       />
 
       {blocked.length > 0 && (

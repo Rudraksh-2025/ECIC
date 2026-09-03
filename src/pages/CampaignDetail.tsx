@@ -8,9 +8,7 @@ import { Link as RouterLink, useNavigate, useParams } from 'react-router-dom';
 import { useStore } from '../store';
 import { ROLES } from '../data/roles';
 import { api } from '../services/mockApi';
-import {
-  DemoScenarioPanel, EmptyState, Grid, KpiCard, LabelValue, PageHeader, SectionCard, Stack, StatusChip,
-} from '../components';
+import { EmptyState, Grid, KpiCard, LabelValue, PageHeader, SectionCard, Stack, StatusChip } from '../components';
 import { toast } from '../hooks';
 import { campaignPerformance } from '../utils/analytics';
 import { fmtDate } from '../utils/dates';
@@ -81,20 +79,6 @@ export function CampaignDetail() {
           activation. The approval step is a separate role from the campaign creator.
         </Alert>
       )}
-
-      <DemoScenarioPanel
-        scenario="A marketing manager reviews campaign performance: what was spent, how many leads it produced, how many qualified, what revenue it drove, and whether investment should continue."
-        evidence={[
-          'Complete campaign record with objective, KPI, audience, segmentation, budget and revenue',
-          'Live lead, qualified-lead, opportunity and revenue attribution',
-          'ROI, conversion rate and cost per lead computed from the CRM data',
-          'CIM-aligned marketing assets with compliance status',
-          'Approval routing separating the campaign creator from the approver',
-        ]}
-        requirements={[41, 62, 66, 67, 68, 71]}
-        next="Compare against the full campaign portfolio"
-        nextTo="/campaign-performance"
-      />
 
       <Grid cols={{ xs: 2, sm: 3, md: 6 }} gap={1.75} sx={{ mb: 2.5 }}>
         <KpiCard dense label="Budget" value={zar(campaign.budget, true)} sub={`${pct(spendPct)} spent`} colour="#0B2545" />

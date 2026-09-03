@@ -4,7 +4,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useStore } from '../store';
 import { api } from '../services/mockApi';
-import { DemoScenarioPanel, Grid, PageHeader, SectionCard, Stack } from '../components';
+import { Grid, PageHeader, SectionCard, Stack } from '../components';
 import { toast } from '../hooks';
 import { APPLICATION_FORMS, APPLICATION_FORM_TYPES } from '../data/applications';
 
@@ -40,16 +40,6 @@ export function ApplicationNew() {
           { label: 'New application' },
         ]}
         actions={<Button variant="outlined" onClick={() => navigate('/applications')}>Cancel</Button>}
-      />
-
-      <DemoScenarioPanel
-        scenario="A Business Development Officer starts a cover application on behalf of an exporter, linked to the opportunity already in the pipeline."
-        evidence={[
-          'Customer and opportunity links are inherited by the application and every document uploaded against it',
-          'Forms are defined as configurable field metadata and rendered generically',
-          'Drafts auto-save and can be completed on desktop, tablet or phone',
-        ]}
-        requirements={[29, 44, 46, 50]}
       />
 
       <Grid cols={{ xs: 1, lg: 3 }} gap={2.5}>

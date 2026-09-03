@@ -12,9 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import { useStore } from '../store';
 import { ALL_PERMISSIONS, ROLE_LIST, ROLES } from '../data/roles';
 import { writeAudit } from '../services/mockApi';
-import {
-  DataTable, DemoScenarioPanel, Grid, KpiCard, PageHeader, SectionCard, Stack, StatusChip,
-} from '../components';
+import { DataTable, Grid, KpiCard, PageHeader, SectionCard, Stack, StatusChip } from '../components';
 import type { Column } from '../components';
 import { toast } from '../hooks';
 import { fmtDateTime, relativeTime } from '../utils/dates';
@@ -136,20 +134,6 @@ export function UsersRoles() {
             Export matrix
           </Button>
         }
-      />
-
-      <DemoScenarioPanel
-        scenario="The evaluator asks how ECIC prevents the person who investigates a complaint from also authorising its closure. The role matrix answers it, and the role switcher proves it in the live interface."
-        evidence={[
-          'Nine roles with an explicit, exportable permission matrix',
-          'Documented segregation rationale on every role',
-          'Live role switching that changes navigation, actions and field visibility',
-          'Closure, approval and administration rights held by different roles',
-          'User records showing MFA enrolment, SSO linkage and account status',
-        ]}
-        requirements={[20, 86, 87, 77, 78]}
-        next="Switch to Complaints Specialist and try to close a complaint"
-        nextTo="/complaints"
       />
 
       <Grid cols={{ xs: 2, sm: 3, md: 6 }} gap={1.75} sx={{ mb: 2.5 }}>
