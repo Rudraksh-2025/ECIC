@@ -96,7 +96,21 @@ function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
         <Logo />
       </Box>
       <Divider sx={{ borderColor: alpha('#fff', 0.08) }} />
-      <Box sx={{ flex: 1, overflowY: 'auto', px: 1.25, py: 1.25 }}>
+      <Box
+        sx={{
+          flex: 1, overflowY: 'auto', px: 1.25, py: 1.25,
+          // The global scrollbar styling (in theme.ts) is tuned for the light page
+          // background and renders as a large pale bar against this navy panel on
+          // platforms with classic (non-overlay) scrollbars. Override it here for a
+          // slim, dark-appropriate thumb instead.
+          '&::-webkit-scrollbar': { width: 6 },
+          '&::-webkit-scrollbar-thumb': { background: alpha('#fff', 0.14), borderRadius: 8, border: 'none' },
+          '&::-webkit-scrollbar-thumb:hover': { background: alpha('#fff', 0.24) },
+          '&::-webkit-scrollbar-track': { background: 'transparent' },
+          scrollbarWidth: 'thin',
+          scrollbarColor: `${alpha('#fff', 0.16)} transparent`,
+        }}
+      >
         {NAV_GROUPS.map((group) => {
           const items = group.items.filter((i) => allowed.includes(i.key) || ALWAYS_VISIBLE.includes(i.key));
           if (items.length === 0) return null;
