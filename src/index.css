@@ -1,0 +1,35 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*:focus-visible {
+  outline: 2px solid #0E7C7B;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media print {
+  @page { margin: 14mm; size: A4 landscape; }
+  body { background: #fff !important; }
+  .no-print { display: none !important; }
+  .print-only { display: block !important; }
+}
+
+.print-only { display: none; }
+
+@keyframes ecic-scan {
+  0%   { transform: translateY(-46%); opacity: .25; }
+  50%  { opacity: 1; }
+  100% { transform: translateY(46%); opacity: .25; }
+}
+
+@keyframes ecic-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .45; }
+}
